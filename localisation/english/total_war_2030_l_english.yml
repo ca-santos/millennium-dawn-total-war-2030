@@ -1,0 +1,46 @@
+﻿l_english:
+ tw2030_escalation.1.t:0 "A Deteriorating World Order"
+ tw2030_escalation.1.d:0 "As the middle of the decade approaches, global diplomatic channels grow cold. Intelligence reports from major capitals indicate a shift toward increased military spending, industrial re-tooling, and strategic alliance building. The era of comfortable post-Cold War peace is slipping away."
+ tw2030_escalation.1.a:0 "An uncertain future lies ahead."
+
+ tw2030_escalation.2.t:0 "The Great Arms Race of 2025"
+ tw2030_escalation.2.d:0 "Strategic competition between global super and regional powers has reached a fever pitch. Military factories across the globe operate around the clock, naval shipyards build new strike fleets, and defense budgets surge. Strategic stockpiles are being hoarded as major alliances brace for potential high-intensity conflict."
+ tw2030_escalation.2.a:0 "Prepare for war to secure peace."
+
+ tw2030_escalation.3.t:0 "Dawn of Total War: 2030"
+ tw2030_escalation.3.d:0 "The year 2030 has arrived, and with it, the culmination of fifteen years of escalating geopolitical friction. Armed forces across every major power stand at maximum combat readiness. Modern armored divisions, stealth strike aircraft, and vast naval task forces are positioned for conflict. The world sits on a razor edge."
+ tw2030_escalation.3.a:0 "Let total war begin."
+
+ tw2030_escalation.4.t:0 "Emergency Great Power Mobilization"
+ tw2030_escalation.4.d:0 "Unprecedented aggressive maneuvers and rapid expansion have triggered alarm across global defense ministries. Major powers have initiated emergency mobilization protocols, accelerating military factory conversion, expanding force limits, and elevating combat readiness levels."
+ tw2030_escalation.4.a:0 "The powers of the world respond."
+
+ tw2030_flashpoint.1.t:0 "Taiwan Strait Tension Escalation"
+ tw2030_flashpoint.1.d:0 "Military exercises and naval patrols around the Taiwan Strait have escalated significantly. Naval forces and air superiority wings are deployed on high alert as strategic deterrence intensifies across the Pacific."
+ tw2030_flashpoint.1.a:0 "The Pacific naval posture shifts."
+
+ tw2030_flashpoint.2.t:0 "Suwalki Gap & Eastern European Standoff"
+ tw2030_flashpoint.2.d:0 "Heavy armored formations and rapid reaction forces mass along the Suwalki Corridor and Eastern European border regions. Air defense networks and fortification garrisons are placed on maximum readiness."
+ tw2030_flashpoint.2.a:0 "An iron curtain of defense falls."
+
+ tw2030_flashpoint.3.t:0 "Strait of Hormuz Maritime Risk"
+ tw2030_flashpoint.3.d:0 "Rising maritime friction in the Persian Gulf and Strait of Hormuz has forced international shipping lines to request naval escort protection. Naval task forces increase patrol presence along critical maritime choke points."
+ tw2030_flashpoint.3.a:0 "Protect strategic maritime trade."
+
+ tw2030_flashpoint.4.t:0 "Korean Peninsula Defense Surge"
+ tw2030_flashpoint.4.d:0 "Recent missile testing and border fortification upgrades have prompted an immediate surge in military readiness across the Korean Peninsula. Ground forces prepare for potential high-intensity conflict."
+ tw2030_flashpoint.4.a:0 "Stand at high readiness."
+
+ tw2030_flashpoint.5.t:0 "Strategic Resource & Microchip Bottlenecks"
+ tw2030_flashpoint.5.d:0 "Export controls, resource stockpiling, and trade friction over rare earths and microchip production create severe industrial bottlenecks for advanced military manufacturing across the globe."
+ tw2030_flashpoint.5.a:0 "Industries adjust to resource scarcity."
+
+ tw2030_state_of_readiness_1:0 "Initial Rearmament"
+ tw2030_state_of_readiness_2:0 "Expanded Defense Posture"
+ tw2030_state_of_readiness_3:0 "Strategic Pre-War Readiness"
+ tw2030_state_of_readiness_4:0 "Total War Readiness"
+
+ tw2030_taiwan_strait_tension:0 "Taiwan Strait High Alert"
+ tw2030_eastern_front_standoff:0 "Eastern European Border Standoff"
+ tw2030_hormuz_maritime_risk:0 "Hormuz Maritime Patrol Risk"
+ tw2030_strategic_resource_scarcity:0 "Strategic Resource Scarcity"

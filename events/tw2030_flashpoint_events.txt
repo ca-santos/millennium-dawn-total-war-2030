@@ -1,0 +1,87 @@
+# Total War 2030 - Regional Flashpoint & Dynamic Crisis Events
+
+add_namespace = tw2030_flashpoint
+
+# Flashpoint 1: Taiwan Strait Crisis Escalation
+news_event = {
+	id = tw2030_flashpoint.1
+	title = tw2030_flashpoint.1.t
+	desc = tw2030_flashpoint.1.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_flashpoint.1.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.1"
+		add_threat = 2.0
+	}
+}
+
+# Flashpoint 2: Suwalki Gap & Eastern European Border Standoff
+news_event = {
+	id = tw2030_flashpoint.2
+	title = tw2030_flashpoint.2.t
+	desc = tw2030_flashpoint.2.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_flashpoint.2.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.2"
+		add_threat = 2.5
+	}
+}
+
+# Flashpoint 3: Strait of Hormuz Maritime Security Crisis
+news_event = {
+	id = tw2030_flashpoint.3
+	title = tw2030_flashpoint.3.t
+	desc = tw2030_flashpoint.3.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_flashpoint.3.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.3"
+		add_threat = 1.5
+	}
+}
+
+# Flashpoint 4: Korean Peninsula Defense & Rearmament Surge
+news_event = {
+	id = tw2030_flashpoint.4
+	title = tw2030_flashpoint.4.t
+	desc = tw2030_flashpoint.4.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_flashpoint.4.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.4"
+		add_threat = 1.5
+	}
+}
+
+# Flashpoint 5: Global Microchip & Strategic Resource Friction
+news_event = {
+	id = tw2030_flashpoint.5
+	title = tw2030_flashpoint.5.t
+	desc = tw2030_flashpoint.5.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_flashpoint.5.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.5"
+	}
+}

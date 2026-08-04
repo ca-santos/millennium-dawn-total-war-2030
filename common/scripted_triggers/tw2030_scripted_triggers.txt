@@ -1,0 +1,28 @@
+# Total War 2030 - Scripted Triggers
+
+tw2030_is_era_1 = {
+	date < 2015.1.1
+}
+
+tw2030_is_era_2 = {
+	date > 2015.1.1
+	date < 2025.1.1
+}
+
+tw2030_is_era_3 = {
+	date > 2025.1.1
+	date < 2030.1.1
+}
+
+tw2030_is_era_4 = {
+	date > 2030.1.1
+}
+
+tw2030_is_rearming_power = {
+	OR = {
+		is_major = yes
+		num_of_factories > 20
+		has_country_flag = tw2030_priority_rearming_power
+	}
+	is_subject = no
+}

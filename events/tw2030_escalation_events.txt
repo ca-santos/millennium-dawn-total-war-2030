@@ -1,0 +1,67 @@
+# Total War 2030 - Escalation News & Notification Events
+
+add_namespace = tw2030_escalation
+
+# Era 2 Event (2015: Rise of Geopolitical Friction)
+news_event = {
+	id = tw2030_escalation.1
+	title = tw2030_escalation.1.t
+	desc = tw2030_escalation.1.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_escalation.1.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.1"
+	}
+}
+
+# Era 3 Event (2025: Pre-War Mobilization & Global Arms Race)
+news_event = {
+	id = tw2030_escalation.2
+	title = tw2030_escalation.2.t
+	desc = tw2030_escalation.2.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_escalation.2.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.2"
+	}
+}
+
+# Era 4 Event (2030: Dawn of Total War)
+news_event = {
+	id = tw2030_escalation.3
+	title = tw2030_escalation.3.t
+	desc = tw2030_escalation.3.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_escalation.3.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.3"
+	}
+}
+
+# Early Emergency Mobilization Event (Reactive Threat)
+news_event = {
+	id = tw2030_escalation.4
+	title = tw2030_escalation.4.t
+	desc = tw2030_escalation.4.d
+	picture = GFX_news_event_war
+
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = tw2030_escalation.4.a
+		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.4"
+	}
+}

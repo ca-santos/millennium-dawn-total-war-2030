@@ -1,0 +1,275 @@
+# Total War 2030 - AI Strategies
+
+# --- ERA 2 INDUSTRIAL BUILDING (2015-2024) ---
+tw2030_era2_industrial = {
+	enable = {
+		has_global_flag = tw2030_era_2_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 40
+	}
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 30
+	}
+}
+
+# --- ERA 3 INDUSTRIAL BUILDING (2025-2029) ---
+tw2030_era3_industrial = {
+	enable = {
+		has_global_flag = tw2030_era_3_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 90
+	}
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 60
+	}
+	ai_strategy = {
+		type = building_target
+		id = air_base
+		value = 40
+	}
+	ai_strategy = {
+		type = building_target
+		id = anti_air_building
+		value = 40
+	}
+}
+
+# --- ERA 4 INDUSTRIAL BUILDING (2030+) ---
+tw2030_era4_industrial = {
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 160
+	}
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 100
+	}
+	ai_strategy = {
+		type = building_target
+		id = air_base
+		value = 60
+	}
+	ai_strategy = {
+		type = building_target
+		id = anti_air_building
+		value = 60
+	}
+}
+
+# --- ERA 2 FORCE BUILD & ROLES ---
+tw2030_era2_army_build = {
+	enable = {
+		has_global_flag = tw2030_era_2_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 30
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 20
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 25
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = apc_mechanized
+		value = 25
+	}
+}
+
+# --- ERA 3 FORCE BUILD & ROLES ---
+tw2030_era3_army_build = {
+	enable = {
+		has_global_flag = tw2030_era_3_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 75
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 40
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = apc_mechanized
+		value = 45
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = Special_Forces
+		value = 30
+	}
+}
+
+# --- ERA 4 FORCE BUILD & ROLES ---
+tw2030_era4_army_build = {
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		tw2030_is_rearming_power = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 150
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 70
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 80
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = apc_mechanized
+		value = 60
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = Special_Forces
+		value = 50
+	}
+}
+
+# --- REVISIONIST POWER AGGRESSION (ERA 3 & 4) ---
+tw2030_revisionist_aggression = {
+	allowed = {
+		OR = {
+			original_tag = SOV
+			original_tag = CHI
+			original_tag = IRN
+			original_tag = NKO
+		}
+	}
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = avoid_starting_wars
+		value = -100
+	}
+}
+
+# --- REVISIONIST WAR PREPARATION (ERA 3 & 4) ---
+tw2030_CHI_war_prep_TAI = {
+	allowed = { original_tag = CHI }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+		has_wargoal_against = TAI
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = prepare_for_war id = TAI value = 150 }
+	ai_strategy = { type = declare_war id = TAI value = 100 }
+}
+
+tw2030_SOV_war_prep_UKR = {
+	allowed = { original_tag = SOV }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+		has_wargoal_against = UKR
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = prepare_for_war id = UKR value = 150 }
+	ai_strategy = { type = declare_war id = UKR value = 100 }
+}
+
+tw2030_NKO_war_prep_KOR = {
+	allowed = { original_tag = NKO }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+		has_wargoal_against = KOR
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = prepare_for_war id = KOR value = 150 }
+	ai_strategy = { type = declare_war id = KOR value = 100 }
+}
+
+tw2030_IRN_war_prep_ISR = {
+	allowed = { original_tag = IRN }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+		has_wargoal_against = ISR
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = prepare_for_war id = ISR value = 150 }
+	ai_strategy = { type = declare_war id = ISR value = 100 }
+}
+

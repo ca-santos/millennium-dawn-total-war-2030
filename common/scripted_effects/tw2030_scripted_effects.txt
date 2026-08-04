@@ -1,0 +1,151 @@
+# Total War 2030 - Scripted Effects
+
+tw2030_escalation_monthly_pulse = {
+	# Era 2 (2015-2024) Escalation Trigger
+	if = {
+		limit = {
+			tw2030_is_era_2 = yes
+			NOT = { has_global_flag = tw2030_era_2_active }
+		}
+		set_global_flag = tw2030_era_2_active
+		clr_global_flag = tw2030_era_1_active
+		news_event = { id = tw2030_escalation.1 days = 1 }
+	}
+
+	# Era 3 (2025-2029) Arms Race Trigger
+	if = {
+		limit = {
+			tw2030_is_era_3 = yes
+			NOT = { has_global_flag = tw2030_era_3_active }
+		}
+		set_global_flag = tw2030_era_3_active
+		clr_global_flag = tw2030_era_2_active
+		news_event = { id = tw2030_escalation.2 days = 1 }
+	}
+
+	# Era 4 (2030+) Total War Trigger
+	if = {
+		limit = {
+			tw2030_is_era_4 = yes
+			NOT = { has_global_flag = tw2030_era_4_active }
+		}
+		set_global_flag = tw2030_era_4_active
+		clr_global_flag = tw2030_era_3_active
+		news_event = { id = tw2030_escalation.3 days = 1 }
+	}
+
+	# Check for early aggression (Player aggressive expansion before 2025)
+	if = {
+		limit = {
+			NOT = { has_global_flag = tw2030_early_player_aggression }
+			any_country = {
+				is_ai = no
+				threat > 0.35
+			}
+		}
+		set_global_flag = tw2030_early_player_aggression
+		news_event = { id = tw2030_escalation.4 days = 1 }
+	}
+
+	# --- FLASHPOINT CRISIS TRIGGERS ---
+	# Taiwan Strait Crisis (2018+)
+	if = {
+		limit = {
+			date > 2018.1.1
+			NOT = { has_global_flag = tw2030_taiwan_flashpoint_active }
+		}
+		set_global_flag = tw2030_taiwan_flashpoint_active
+		news_event = { id = tw2030_flashpoint.1 days = 1 }
+		CHI = { set_country_flag = tw2030_taiwan_flashpoint_active }
+		TAI = { set_country_flag = tw2030_taiwan_flashpoint_active }
+		USA = { set_country_flag = tw2030_taiwan_flashpoint_active }
+	}
+
+	# Suwalki Gap & Eastern European Standoff (2021+)
+	if = {
+		limit = {
+			date > 2021.1.1
+			NOT = { has_global_flag = tw2030_suwalki_flashpoint_active }
+		}
+		set_global_flag = tw2030_suwalki_flashpoint_active
+		news_event = { id = tw2030_flashpoint.2 days = 1 }
+		SOV = { set_country_flag = tw2030_suwalki_flashpoint_active }
+		POL = { set_country_flag = tw2030_suwalki_flashpoint_active }
+		GER = { set_country_flag = tw2030_suwalki_flashpoint_active }
+	}
+
+	# Hormuz Maritime Crisis (2023+)
+	if = {
+		limit = {
+			date > 2023.1.1
+			NOT = { has_global_flag = tw2030_hormuz_flashpoint_active }
+		}
+		set_global_flag = tw2030_hormuz_flashpoint_active
+		news_event = { id = tw2030_flashpoint.3 days = 1 }
+		IRN = { set_country_flag = tw2030_hormuz_flashpoint_active }
+		SAU = { set_country_flag = tw2030_hormuz_flashpoint_active }
+	}
+
+	# Korean Peninsula Rearmament Alert (2024+)
+	if = {
+		limit = {
+			date > 2024.1.1
+			NOT = { has_global_flag = tw2030_korea_flashpoint_active }
+		}
+		set_global_flag = tw2030_korea_flashpoint_active
+		news_event = { id = tw2030_flashpoint.4 days = 1 }
+		NKO = { set_country_flag = tw2030_readiness_level_3 }
+		KOR = { set_country_flag = tw2030_readiness_level_3 }
+	}
+
+	# Strategic Resource Friction (2026+)
+	if = {
+		limit = {
+			date > 2026.1.1
+			NOT = { has_global_flag = tw2030_resource_friction_active }
+		}
+		set_global_flag = tw2030_resource_friction_active
+		news_event = { id = tw2030_flashpoint.5 days = 1 }
+	}
+
+	# Update country readiness levels for rearming powers
+	every_country = {
+		limit = {
+			tw2030_is_rearming_power = yes
+			is_ai = yes
+		}
+		if = {
+			limit = { has_global_flag = tw2030_era_2_active }
+			set_country_flag = tw2030_readiness_level_1
+			clr_country_flag = tw2030_readiness_level_2
+			clr_country_flag = tw2030_readiness_level_3
+			clr_country_flag = tw2030_readiness_level_4
+		}
+		else_if = {
+			limit = { has_global_flag = tw2030_era_3_active }
+			clr_country_flag = tw2030_readiness_level_1
+			set_country_flag = tw2030_readiness_level_2
+			if = {
+				limit = { is_major = yes }
+				clr_country_flag = tw2030_readiness_level_2
+				set_country_flag = tw2030_readiness_level_3
+			}
+			clr_country_flag = tw2030_readiness_level_4
+		}
+		else_if = {
+			limit = { has_global_flag = tw2030_era_4_active }
+			clr_country_flag = tw2030_readiness_level_1
+			clr_country_flag = tw2030_readiness_level_2
+			clr_country_flag = tw2030_readiness_level_3
+			set_country_flag = tw2030_readiness_level_4
+		}
+		# Emergency Readiness Boost for Major Powers during Early Aggression
+		if = {
+			limit = {
+				has_global_flag = tw2030_early_player_aggression
+				is_major = yes
+			}
+			set_country_flag = tw2030_readiness_level_4
+		}
+	}
+}

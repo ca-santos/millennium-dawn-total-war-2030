@@ -1,0 +1,86 @@
+# Total War 2030 - Dynamic Readiness & Flashpoint Modifiers
+
+tw2030_state_of_readiness_1 = {
+	enable = {
+		has_country_flag = tw2030_readiness_level_1
+	}
+	icon = GFX_idea_generic_war_factory
+	conversion_cost_civ_to_mil_factor = -0.10
+	industrial_capacity_factory = 0.05
+}
+
+tw2030_state_of_readiness_2 = {
+	enable = {
+		has_country_flag = tw2030_readiness_level_2
+	}
+	icon = GFX_idea_generic_war_factory
+	conversion_cost_civ_to_mil_factor = -0.20
+	industrial_capacity_factory = 0.10
+	training_time_army_factor = -0.05
+	army_fuel_consumption_factor = -0.05
+}
+
+tw2030_state_of_readiness_3 = {
+	enable = {
+		has_country_flag = tw2030_readiness_level_3
+	}
+	icon = GFX_idea_generic_war_factory
+	conversion_cost_civ_to_mil_factor = -0.35
+	industrial_capacity_factory = 0.20
+	industrial_capacity_dockyard = 0.15
+	training_time_army_factor = -0.10
+	max_planning = 0.10
+	army_fuel_consumption_factor = -0.10
+}
+
+tw2030_state_of_readiness_4 = {
+	enable = {
+		has_country_flag = tw2030_readiness_level_4
+	}
+	icon = GFX_idea_generic_war_factory
+	conversion_cost_civ_to_mil_factor = -0.50
+	industrial_capacity_factory = 0.35
+	industrial_capacity_dockyard = 0.25
+	training_time_army_factor = -0.20
+	max_planning = 0.20
+	supply_consumption_factor = -0.15
+	army_fuel_consumption_factor = -0.15
+}
+
+# --- FLASHPOINT DYNAMIC MODIFIERS ---
+tw2030_taiwan_strait_tension = {
+	enable = {
+		has_country_flag = tw2030_taiwan_flashpoint_active
+	}
+	icon = GFX_idea_generic_navy_bonus
+	naval_strike_efficiency_factor = 0.10
+	air_superiority_efficiency_factor = 0.10
+	training_time_army_factor = -0.05
+}
+
+tw2030_eastern_front_standoff = {
+	enable = {
+		has_country_flag = tw2030_suwalki_flashpoint_active
+	}
+	icon = GFX_idea_generic_fortify
+	land_reinforce_rate = 0.05
+	max_planning = 0.15
+	army_defence_factor = 0.05
+}
+
+tw2030_hormuz_maritime_risk = {
+	enable = {
+		has_country_flag = tw2030_hormuz_flashpoint_active
+	}
+	icon = GFX_idea_generic_sea_power
+	convoy_escort_efficiency_factor = 0.10
+	navy_fuel_consumption_factor = 0.05
+}
+
+tw2030_strategic_resource_scarcity = {
+	enable = {
+		has_country_flag = tw2030_resource_friction_active
+	}
+	icon = GFX_idea_generic_consumer_goods
+	production_factory_efficiency_gain_factor = -0.05
+}

@@ -1,0 +1,245 @@
+# Total War 2030 - Major Power & Coalition AI Strategies
+
+# --- USA & NATO STRATEGIC POSTURE ---
+tw2030_USA_global_containment = {
+	allowed = { original_tag = USA }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_2_active
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = CHI
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = SOV
+		value = 100
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = Special_Forces
+		value = 40
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 60
+	}
+}
+
+tw2030_NATO_coalition_rearmament = {
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+		is_in_faction_with = USA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 75
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 50
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 40
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = apc_mechanized
+		value = 40
+	}
+}
+
+# --- CHINA (CHI) PACIFIC & LAND POSTURE ---
+tw2030_CHI_pacific_expansion = {
+	allowed = { original_tag = CHI }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_2_active
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = dockyard
+		value = 80
+	}
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 100
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 120
+	}
+	ai_strategy = {
+		type = antagonize
+		id = USA
+		value = 120
+	}
+	ai_strategy = {
+		type = antagonize
+		id = TAI
+		value = 200
+	}
+}
+
+# --- RUSSIA (SOV) STRATEGIC REARMAMENT ---
+tw2030_SOV_western_flank = {
+	allowed = { original_tag = SOV }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_2_active
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 110
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 120
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 75
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 85
+	}
+	ai_strategy = {
+		type = antagonize
+		id = USA
+		value = 120
+	}
+}
+
+# --- INDO-PACIFIC RIVALRY (INDIA & PAKISTAN) ---
+tw2030_RAJ_deterrence = {
+	allowed = { original_tag = RAJ }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 60
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 60
+	}
+	ai_strategy = {
+		type = antagonize
+		id = PAK
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = CHI
+		value = 80
+	}
+}
+
+tw2030_PAK_deterrence = {
+	allowed = { original_tag = PAK }
+	enable = {
+		OR = {
+			has_global_flag = tw2030_era_3_active
+			has_global_flag = tw2030_era_4_active
+		}
+		is_ai = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 50
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 50
+	}
+	ai_strategy = {
+		type = antagonize
+		id = RAJ
+		value = 120
+	}
+}
+
+# --- REACTIVE MOBILIZATION AGAINST EARLY PLAYER AGGRESSION ---
+tw2030_reactive_emergency_mobilization = {
+	enable = {
+		has_global_flag = tw2030_early_player_aggression
+		is_ai = yes
+		is_major = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = arms_factory
+		value = 200
+	}
+	ai_strategy = {
+		type = force_build_armies
+		value = 200
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 80
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = ifv_mechanized
+		value = 90
+	}
+}
