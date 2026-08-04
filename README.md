@@ -69,7 +69,7 @@ In standard Millennium Dawn, major powers frequently remain passive—stockpilin
 ### Manual Installation (Development / Local Mod)
 1. Clone this repository into your local workspace:
    ```bash
-   git clone https://github.com/ca-santos/millenium-dawn-total-war-2030.git
+   git clone https://github.com/ca-santos/millennium-dawn-total-war-2030.git
    ```
 2. Copy or symlink `descriptor.mod` to your Paradox HOI4 mod directory:
    - **macOS**: `~/Documents/Paradox Interactive/Hearts of Iron IV/mod/total_war_2030.mod`
