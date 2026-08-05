@@ -189,7 +189,7 @@ tw2030_revisionist_aggression = {
 		OR = {
 			original_tag = SOV
 			original_tag = CHI
-			original_tag = IRN
+			original_tag = PER
 			original_tag = NKO
 		}
 	}
@@ -257,8 +257,8 @@ tw2030_NKO_war_prep_KOR = {
 	ai_strategy = { type = declare_war id = KOR value = 100 }
 }
 
-tw2030_IRN_war_prep_ISR = {
-	allowed = { original_tag = IRN }
+tw2030_PER_war_prep_ISR = {
+	allowed = { original_tag = PER }
 	enable = {
 		OR = {
 			has_global_flag = tw2030_era_3_active

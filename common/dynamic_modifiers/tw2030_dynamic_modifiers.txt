@@ -53,8 +53,8 @@ tw2030_taiwan_strait_tension = {
 		has_country_flag = tw2030_taiwan_flashpoint_active
 	}
 	icon = GFX_idea_generic_navy_bonus
-	naval_strike_efficiency_factor = 0.10
-	air_superiority_efficiency_factor = 0.10
+	naval_strike_attack_factor = 0.10
+	air_superiority_efficiency = 0.10
 	training_time_army_factor = -0.05
 }
 
@@ -73,7 +73,7 @@ tw2030_hormuz_maritime_risk = {
 		has_country_flag = tw2030_hormuz_flashpoint_active
 	}
 	icon = GFX_idea_generic_sea_power
-	convoy_escort_efficiency_factor = 0.10
+	convoy_escort_efficiency = 0.10
 	navy_fuel_consumption_factor = 0.05
 }
 

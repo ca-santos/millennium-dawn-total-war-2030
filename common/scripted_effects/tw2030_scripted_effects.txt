@@ -82,7 +82,7 @@ tw2030_escalation_monthly_pulse = {
 		}
 		set_global_flag = tw2030_hormuz_flashpoint_active
 		news_event = { id = tw2030_flashpoint.3 days = 1 }
-		IRN = { set_country_flag = tw2030_hormuz_flashpoint_active }
+		PER = { set_country_flag = tw2030_hormuz_flashpoint_active }
 		SAU = { set_country_flag = tw2030_hormuz_flashpoint_active }
 	}
 
