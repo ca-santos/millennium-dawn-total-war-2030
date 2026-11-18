@@ -85,7 +85,7 @@ description: Comprehensive development skill, engine rules, console workarounds,
    - Content:
      ```pdx
      name="Total War 2030"
-     path="/Users/caue/Workspace/Millennium-Dawn/total-war-2030-submod"
+     path="/Volumes/Secundario/caue/Workspace/total-war-2030-submod"
      dependencies={
          "Millennium Dawn: Modern Day Mod"
          "Millennium Dawn: Developer Version"

@@ -10,6 +10,7 @@ tw2030_USA_global_containment = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 	}
 	abort_when_not_enabled = yes
 
@@ -30,17 +31,17 @@ tw2030_USA_global_containment = {
 	ai_strategy = {
 		type = role_ratio
 		id = Special_Forces
-		value = 40
+		value = 20
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 50
+		value = 25
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = ifv_mechanized
-		value = 60
+		value = 30
 	}
 }
 
@@ -51,6 +52,7 @@ tw2030_NATO_coalition_rearmament = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		is_in_faction_with = USA
 	}
 	abort_when_not_enabled = yes
@@ -58,7 +60,7 @@ tw2030_NATO_coalition_rearmament = {
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 75
+		value = 38
 	}
 	ai_strategy = {
 		type = force_build_armies
@@ -67,12 +69,12 @@ tw2030_NATO_coalition_rearmament = {
 	ai_strategy = {
 		type = role_ratio
 		id = ifv_mechanized
-		value = 40
+		value = 20
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = apc_mechanized
-		value = 40
+		value = 20
 	}
 }
 
@@ -86,18 +88,19 @@ tw2030_CHI_pacific_expansion = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = dockyard
-		value = 80
+		value = 40
 	}
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 100
+		value = 50
 	}
 	ai_strategy = {
 		type = force_build_armies
@@ -125,13 +128,14 @@ tw2030_SOV_western_flank = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 110
+		value = 55
 	}
 	ai_strategy = {
 		type = force_build_armies
@@ -140,12 +144,12 @@ tw2030_SOV_western_flank = {
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 75
+		value = 38
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = ifv_mechanized
-		value = 85
+		value = 42
 	}
 	ai_strategy = {
 		type = antagonize
@@ -163,13 +167,14 @@ tw2030_RAJ_deterrence = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 60
+		value = 30
 	}
 	ai_strategy = {
 		type = force_build_armies
@@ -195,13 +200,14 @@ tw2030_PAK_deterrence = {
 			has_global_flag = tw2030_era_4_active
 		}
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 	}
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 50
+		value = 25
 	}
 	ai_strategy = {
 		type = force_build_armies
@@ -219,6 +225,7 @@ tw2030_reactive_emergency_mobilization = {
 	enable = {
 		has_global_flag = tw2030_early_player_aggression
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		is_major = yes
 	}
 	abort_when_not_enabled = yes
@@ -226,20 +233,20 @@ tw2030_reactive_emergency_mobilization = {
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 200
+		value = 100
 	}
 	ai_strategy = {
 		type = force_build_armies
-		value = 200
+		value = 100
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 80
+		value = 40
 	}
 	ai_strategy = {
 		type = role_ratio
 		id = ifv_mechanized
-		value = 90
+		value = 45
 	}
 }

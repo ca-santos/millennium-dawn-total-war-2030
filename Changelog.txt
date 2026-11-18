@@ -1,0 +1,14 @@
+Total War 2030 - Changelog
+
+v1.0.1
+- Fixed: dynamic modifiers are now actually applied (readiness 1-4 and the four flashpoint modifiers).
+- Fixed: monthly pulse runs once per month again (global flag guard).
+- Fixed: removed the IRN country tag (crash risk); the mod uses PER.
+- Fixed: early-aggression flag checks player threat only, expires after 2 years.
+- Fixed: one readiness level at a time; flags and modifiers are removed when a country stops qualifying.
+- Added: wargoals for CHI/TAI, SOV/UKR, NKO/KOR, PER/ISR in Era 3; declare_war strategies only in Era 4.
+- Added: bankruptcy guard on industrial and force-build AI strategies.
+- Changed: readiness bonuses reduced and applied to the player too; AI building/role targets halved to avoid stacking.
+- Changed: readiness recalculated on era changes and every 90 days instead of monthly.
+- Changed: flashpoint news events only fire within a year of their start date.
+- Changed: docs moved to docs/, descriptor tags and dependency cleaned.

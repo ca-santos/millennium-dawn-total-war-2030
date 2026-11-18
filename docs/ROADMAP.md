@@ -23,8 +23,8 @@ This document outlines the step-by-step development roadmap for the **Total War 
 ## Phase 3 — Strategic AI Production & Equipment Overrides [COMPLETED / IN PROGRESS]
 - [x] Add dynamic AI strategies (`common/ai_strategy/tw2030_ai_strategies.txt`) for military industry investment (MIC/NIC).
 - [x] Scale role ratios for ground forces (MBTs, IFVs, Mechanized), air forces (Air Superiority, Strike CAS), and navies (Carriers, Destroyers, Submarines) as eras advance.
-- [x] Implement equipment production priority overrides (`common/ai_equipment/tw2030_ai_equipment.txt`).
-- [x] Implement weapon dump suppression so rearming powers stockpile infantry weapons, missiles, and armored chassis.
+- [ ] (NOT IMPLEMENTED) Implement equipment production priority overrides (`common/ai_equipment/tw2030_ai_equipment.txt`).
+- [ ] (NOT IMPLEMENTED) Implement weapon dump suppression so rearming powers stockpile infantry weapons, missiles, and armored chassis.
 
 ---
 

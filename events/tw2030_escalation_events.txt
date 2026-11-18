@@ -14,7 +14,7 @@ news_event = {
 
 	option = {
 		name = tw2030_escalation.1.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.1"
+		log = "[GetDateText]: Event tw2030_escalation.1"
 	}
 }
 
@@ -30,7 +30,7 @@ news_event = {
 
 	option = {
 		name = tw2030_escalation.2.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.2"
+		log = "[GetDateText]: Event tw2030_escalation.2"
 	}
 }
 
@@ -46,7 +46,7 @@ news_event = {
 
 	option = {
 		name = tw2030_escalation.3.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.3"
+		log = "[GetDateText]: Event tw2030_escalation.3"
 	}
 }
 
@@ -62,6 +62,6 @@ news_event = {
 
 	option = {
 		name = tw2030_escalation.4.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_escalation.4"
+		log = "[GetDateText]: Event tw2030_escalation.4"
 	}
 }

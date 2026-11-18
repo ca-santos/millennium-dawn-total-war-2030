@@ -14,7 +14,7 @@ news_event = {
 
 	option = {
 		name = tw2030_flashpoint.1.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.1"
+		log = "[GetDateText]: Event tw2030_flashpoint.1"
 		add_threat = 2.0
 	}
 }
@@ -31,7 +31,7 @@ news_event = {
 
 	option = {
 		name = tw2030_flashpoint.2.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.2"
+		log = "[GetDateText]: Event tw2030_flashpoint.2"
 		add_threat = 2.5
 	}
 }
@@ -48,7 +48,7 @@ news_event = {
 
 	option = {
 		name = tw2030_flashpoint.3.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.3"
+		log = "[GetDateText]: Event tw2030_flashpoint.3"
 		add_threat = 1.5
 	}
 }
@@ -65,7 +65,7 @@ news_event = {
 
 	option = {
 		name = tw2030_flashpoint.4.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.4"
+		log = "[GetDateText]: Event tw2030_flashpoint.4"
 		add_threat = 1.5
 	}
 }
@@ -82,6 +82,6 @@ news_event = {
 
 	option = {
 		name = tw2030_flashpoint.5.a
-		log = "[GetDateText]: [Root.GetName]: Event tw2030_flashpoint.5"
+		log = "[GetDateText]: Event tw2030_flashpoint.5"
 	}
 }

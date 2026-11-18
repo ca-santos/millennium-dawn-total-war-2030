@@ -25,9 +25,9 @@ In standard Millennium Dawn, major powers frequently remain passive—stockpilin
 
 * 📈 **Dynamic 4-Phase Escalation System**: Organic geopolitical transition from peacetime stability (2000–2014) to regional friction (2015–2024), pre-war strategic mobilization (2025–2029), and full Total War posture (2030+).
 * 🧠 **Smart & Fair AI Rearmament**: Major AI nations dynamically shift industrial construction toward Military Factories (MIC) and Naval Dockyards (NIC) as global threat escalates.
-* 📦 **Stockpile & Weapon Dump Protection**: Prevents AI nations from liquidating massive reserves of MBTs, IFVs, SAMs, and small arms for quick cash during crisis eras.
-* 🛡️ **Financial Insolvency Guarding**: Integrates with Millennium Dawn's economic systems to ensure rearming AI powers maintain fiscal stability without triggering premature economic collapse.
-* 🎖️ **Strategic Force Scaling**: Multiplies division, naval, and air force limiters progressively, pushing Great Powers (USA, China, Russia, NATO, India) into realistic force building.
+* 🌍 **Flashpoints & Wargoals**: Taiwan, Suwalki, Hormuz, Korea and resource crises with dynamic modifiers; revisionist powers (CHI, SOV, NKO, PER) receive wargoals in Era 3 and the AI declares them in Era 4.
+* 🛡️ **Financial Insolvency Guarding**: The industrial and force-build AI strategies are disabled while a country has the `bankruptcy_incoming_collapse` mission.
+* 🎖️ **Strategic Force Scaling**: Scales force-build and role-ratio targets by era, pushing Great Powers (USA, China, Russia, NATO, India) into realistic force building.
 
 ---
 

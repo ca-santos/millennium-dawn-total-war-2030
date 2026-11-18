@@ -1,6 +1,8 @@
 # Total War 2030 - On Actions
 
 on_actions = {
+	# on_monthly runs once per country; the global flag is set by the first country
+	# of the month so the pulse (and its every_country loop) runs only once.
 	on_monthly = {
 		effect = {
 			if = {

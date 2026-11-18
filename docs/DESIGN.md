@@ -6,7 +6,7 @@
 
 Millennium Dawn offers an unprecedented level of depth regarding 21st-century politics, economic development, debt mechanics, and modern military tech trees. However, standard MD gameplay often suffers from passive AI behavior: major powers maintain peacetime economic focus for decades, stockpile minimal equipment, build limited military factories, and rarely initiate large-scale peer-to-peer conventional warfare.
 
-**Total War 2030** solves this passivity. The submod does **not** force a single railroaded outcome (such as a scripted scripted World War 3 event on January 1st, 2030). Instead, it implements dynamic AI strategic profiles, dynamic threat mechanics, evolving readiness modifiers, and escalating military production priorities that naturally push the global power structure into an intense arms race and eventual high-intensity global war.
+**Total War 2030** solves this passivity. Readiness bonuses are applied to every qualifying country (player included) and are deliberately modest. The submod does **not** force a single railroaded outcome (such as a scripted scripted World War 3 event on January 1st, 2030). Instead, it implements dynamic AI strategic profiles, dynamic threat mechanics, evolving readiness modifiers, and escalating military production priorities that naturally push the global power structure into an intense arms race and eventual high-intensity global war.
 
 ---
 
@@ -65,19 +65,19 @@ The submod divides the timeline into four organic operational eras:
 
 2. **Era 2 (2015–2024)**:
    - Global Tension: Moderate (15%–35%).
-   - Trigger: Date >= 2015.1.1.
+   - Trigger: date > 2014.12.31 (monthly pulse).
    - AI Behavior: Major powers begin military modernization; MIC investment weight increased; equipment dumping thresholds doubled.
-   - Dynamic Modifier: `tw2030_escalation_phase_1`.
+   - Dynamic Modifier: `tw2030_state_of_readiness_1`.
 
 3. **Era 3 (2025–2029)**:
    - Global Tension: High (35%–65%).
-   - Trigger: Date >= 2025.1.1 or World Threat > 40%.
+   - Trigger: date > 2024.12.31.
    - AI Behavior: Pre-war mobilization. Division, air, and ship limiters scaled up by 40%. AI increases production of armored chassis, IFVs, SAMs, and multirole air superiority fighters.
-   - Dynamic Modifier: `tw2030_escalation_phase_2`.
+   - Dynamic Modifier: `tw2030_state_of_readiness_2`/`_3`.
 
 4. **Era 4 (2030+)**:
    - Global Tension: Critical (65%–100%).
-   - Trigger: Date >= 2030.1.1 or World Threat > 60%.
+   - Trigger: date > 2029.12.31.
    - AI Behavior: Total War Readiness posture (`tw2030_state_of_readiness_4`). Wargoal generation constraints lifted for revisionist powers; military production consumes max available industrial capacity.
 
 ---
@@ -102,17 +102,17 @@ In standard MD (`MD_econ_ai.txt`), AI spending heavily favors civilian factories
 
 ### 5.2 Stockpile & Weapon Dump Management
 In standard MD (`99_weapon_dump_effects.txt`), peacetime AI routinely dumps excess infantry weapons (>150k), tanks (>2.5k), and artillery (>5k) for cash.
-- **Submod Override**: Under `tw2030_escalation_phase_1` and beyond, the dump thresholds are quadrupled or disabled for major powers, allowing them to accumulate massive wartime reserves of small arms, APCs, MBTs, and artillery.
+- **Submod Override**: **Not implemented yet.** Planned: under readiness, the dump thresholds are quadrupled or disabled for major powers, allowing them to accumulate massive wartime reserves of small arms, APCs, MBTs, and artillery.
 
 ### 5.3 Force Build & Unit Limiters
-- **Division Limiters**: Standard MD calculates `division_limiter_limit` daily. Submod applies positive situational multipliers (+25% in Era 2, +50% in Era 3, +100% in Era 4).
+- **Division Limiters** (not implemented yet): Standard MD calculates `division_limiter_limit` daily. Submod applies positive situational multipliers (+25% in Era 2, +50% in Era 3, +100% in Era 4).
 - **Force Build Armies**: Great powers receive `force_build_armies` weighting adjustments up to +150 in Era 3/4.
 
 ---
 
 ## 6. Military & Economic Balance Philosophy
 
-- **Bankruptcy Guarding**: All submod military spending and focus/decision triggers check MD's bankruptcy condition (`NOT = { has_active_mission = bankruptcy_incoming_collapse }`).
+- **Bankruptcy Guarding**: The industrial and force-build AI strategies check MD's bankruptcy condition (`NOT = { has_active_mission = bankruptcy_incoming_collapse }`).
 - **Dynamic Readiness Modifiers**: Nation-level dynamic modifiers give escalating defense throughput, training speed, and factory conversion speed while maintaining realistic resource costs.
 - **Balanced Template Design**: AI division templates maintain proper front-width, air defense, anti-tank capability, and logistics support.
 
@@ -124,17 +124,13 @@ In standard MD (`99_weapon_dump_effects.txt`), peacetime AI routinely dumps exce
 /total-war-2030-submod
 ├── descriptor.mod
 ├── total-war-2030.mod
-├── DESIGN.md
-├── ROADMAP.md
+├── docs/ (DESIGN, ROADMAP, ROADMAP_FUTURE, SKILL)
+├── Changelog.txt
 ├── common/
-│   ├── ai_equipment/
-│   │   └── tw2030_ai_equipment.txt
 │   ├── ai_strategy/
 │   │   └── tw2030_ai_strategies.txt
 │   ├── dynamic_modifiers/
 │   │   └── tw2030_dynamic_modifiers.txt
-│   ├── ideas/
-│   │   └── tw2030_ideas.txt
 │   ├── on_actions/
 │   │   └── tw2030_on_actions.txt
 │   ├── scripted_effects/

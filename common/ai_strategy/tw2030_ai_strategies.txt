@@ -5,6 +5,7 @@ tw2030_era2_industrial = {
 	enable = {
 		has_global_flag = tw2030_era_2_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -12,12 +13,12 @@ tw2030_era2_industrial = {
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 40
+		value = 20
 	}
 	ai_strategy = {
 		type = building_target
 		id = dockyard
-		value = 30
+		value = 15
 	}
 }
 
@@ -26,6 +27,7 @@ tw2030_era3_industrial = {
 	enable = {
 		has_global_flag = tw2030_era_3_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -33,22 +35,22 @@ tw2030_era3_industrial = {
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 90
+		value = 45
 	}
 	ai_strategy = {
 		type = building_target
 		id = dockyard
-		value = 60
+		value = 30
 	}
 	ai_strategy = {
 		type = building_target
 		id = air_base
-		value = 40
+		value = 20
 	}
 	ai_strategy = {
 		type = building_target
 		id = anti_air_building
-		value = 40
+		value = 20
 	}
 }
 
@@ -57,6 +59,7 @@ tw2030_era4_industrial = {
 	enable = {
 		has_global_flag = tw2030_era_4_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -64,22 +67,22 @@ tw2030_era4_industrial = {
 	ai_strategy = {
 		type = building_target
 		id = arms_factory
-		value = 160
+		value = 80
 	}
 	ai_strategy = {
 		type = building_target
 		id = dockyard
-		value = 100
+		value = 50
 	}
 	ai_strategy = {
 		type = building_target
 		id = air_base
-		value = 60
+		value = 30
 	}
 	ai_strategy = {
 		type = building_target
 		id = anti_air_building
-		value = 60
+		value = 30
 	}
 }
 
@@ -88,6 +91,7 @@ tw2030_era2_army_build = {
 	enable = {
 		has_global_flag = tw2030_era_2_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -118,6 +122,7 @@ tw2030_era3_army_build = {
 	enable = {
 		has_global_flag = tw2030_era_3_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -153,6 +158,7 @@ tw2030_era4_army_build = {
 	enable = {
 		has_global_flag = tw2030_era_4_active
 		is_ai = yes
+		NOT = { has_active_mission = bankruptcy_incoming_collapse }
 		tw2030_is_rearming_power = yes
 	}
 	abort_when_not_enabled = yes
@@ -222,6 +228,17 @@ tw2030_CHI_war_prep_TAI = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = prepare_for_war id = TAI value = 150 }
+}
+
+tw2030_CHI_declare_TAI = {
+	allowed = { original_tag = CHI }
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		has_wargoal_against = TAI
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = { type = declare_war id = TAI value = 100 }
 }
 
@@ -238,6 +255,17 @@ tw2030_SOV_war_prep_UKR = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = prepare_for_war id = UKR value = 150 }
+}
+
+tw2030_SOV_declare_UKR = {
+	allowed = { original_tag = SOV }
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		has_wargoal_against = UKR
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = { type = declare_war id = UKR value = 100 }
 }
 
@@ -254,6 +282,17 @@ tw2030_NKO_war_prep_KOR = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = prepare_for_war id = KOR value = 150 }
+}
+
+tw2030_NKO_declare_KOR = {
+	allowed = { original_tag = NKO }
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		has_wargoal_against = KOR
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = { type = declare_war id = KOR value = 100 }
 }
 
@@ -270,6 +309,17 @@ tw2030_PER_war_prep_ISR = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = { type = prepare_for_war id = ISR value = 150 }
+}
+
+tw2030_PER_declare_ISR = {
+	allowed = { original_tag = PER }
+	enable = {
+		has_global_flag = tw2030_era_4_active
+		is_ai = yes
+		has_wargoal_against = ISR
+	}
+	abort_when_not_enabled = yes
+
 	ai_strategy = { type = declare_war id = ISR value = 100 }
 }
 

@@ -5,17 +5,17 @@ tw2030_is_era_1 = {
 }
 
 tw2030_is_era_2 = {
-	date > 2015.1.1
+	date > 2014.12.31
 	date < 2025.1.1
 }
 
 tw2030_is_era_3 = {
-	date > 2025.1.1
+	date > 2024.12.31
 	date < 2030.1.1
 }
 
 tw2030_is_era_4 = {
-	date > 2030.1.1
+	date > 2029.12.31
 }
 
 tw2030_is_rearming_power = {

@@ -8,6 +8,7 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_era_2_active }
 		}
 		set_global_flag = tw2030_era_2_active
+		clr_global_flag = tw2030_readiness_fresh
 		clr_global_flag = tw2030_era_1_active
 		news_event = { id = tw2030_escalation.1 days = 1 }
 	}
@@ -19,6 +20,7 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_era_3_active }
 		}
 		set_global_flag = tw2030_era_3_active
+		clr_global_flag = tw2030_readiness_fresh
 		clr_global_flag = tw2030_era_2_active
 		news_event = { id = tw2030_escalation.2 days = 1 }
 	}
@@ -30,24 +32,32 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_era_4_active }
 		}
 		set_global_flag = tw2030_era_4_active
+		clr_global_flag = tw2030_readiness_fresh
 		clr_global_flag = tw2030_era_3_active
 		news_event = { id = tw2030_escalation.3 days = 1 }
 	}
 
-	# Check for early aggression (Player aggressive expansion before 2025)
+	# Check for early aggression (a player country with high threat before 2025)
 	if = {
 		limit = {
 			NOT = { has_global_flag = tw2030_early_player_aggression }
+			date < 2025.1.1
 			any_country = {
 				is_ai = no
 				threat > 0.35
 			}
 		}
-		set_global_flag = tw2030_early_player_aggression
+		set_global_flag = {
+			flag = tw2030_early_player_aggression
+			days = 730
+		}
+		clr_global_flag = tw2030_readiness_fresh
 		news_event = { id = tw2030_escalation.4 days = 1 }
 	}
 
 	# --- FLASHPOINT CRISIS TRIGGERS ---
+	# Flags and dynamic modifiers are always applied; the news event only fires within
+	# one year of the start date so late saves are not flooded with five major events.
 	# Taiwan Strait Crisis (2018+)
 	if = {
 		limit = {
@@ -55,10 +65,22 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_taiwan_flashpoint_active }
 		}
 		set_global_flag = tw2030_taiwan_flashpoint_active
-		news_event = { id = tw2030_flashpoint.1 days = 1 }
-		CHI = { set_country_flag = tw2030_taiwan_flashpoint_active }
-		TAI = { set_country_flag = tw2030_taiwan_flashpoint_active }
-		USA = { set_country_flag = tw2030_taiwan_flashpoint_active }
+		if = {
+			limit = { date < 2019.1.1 }
+			news_event = { id = tw2030_flashpoint.1 days = 1 }
+		}
+		CHI = {
+			set_country_flag = tw2030_taiwan_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_taiwan_strait_tension }
+		}
+		TAI = {
+			set_country_flag = tw2030_taiwan_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_taiwan_strait_tension }
+		}
+		USA = {
+			set_country_flag = tw2030_taiwan_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_taiwan_strait_tension }
+		}
 	}
 
 	# Suwalki Gap & Eastern European Standoff (2021+)
@@ -68,10 +90,22 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_suwalki_flashpoint_active }
 		}
 		set_global_flag = tw2030_suwalki_flashpoint_active
-		news_event = { id = tw2030_flashpoint.2 days = 1 }
-		SOV = { set_country_flag = tw2030_suwalki_flashpoint_active }
-		POL = { set_country_flag = tw2030_suwalki_flashpoint_active }
-		GER = { set_country_flag = tw2030_suwalki_flashpoint_active }
+		if = {
+			limit = { date < 2022.1.1 }
+			news_event = { id = tw2030_flashpoint.2 days = 1 }
+		}
+		SOV = {
+			set_country_flag = tw2030_suwalki_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_eastern_front_standoff }
+		}
+		POL = {
+			set_country_flag = tw2030_suwalki_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_eastern_front_standoff }
+		}
+		GER = {
+			set_country_flag = tw2030_suwalki_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_eastern_front_standoff }
+		}
 	}
 
 	# Hormuz Maritime Crisis (2023+)
@@ -81,9 +115,18 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_hormuz_flashpoint_active }
 		}
 		set_global_flag = tw2030_hormuz_flashpoint_active
-		news_event = { id = tw2030_flashpoint.3 days = 1 }
-		PER = { set_country_flag = tw2030_hormuz_flashpoint_active }
-		SAU = { set_country_flag = tw2030_hormuz_flashpoint_active }
+		if = {
+			limit = { date < 2024.1.1 }
+			news_event = { id = tw2030_flashpoint.3 days = 1 }
+		}
+		PER = {
+			set_country_flag = tw2030_hormuz_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_hormuz_maritime_risk }
+		}
+		SAU = {
+			set_country_flag = tw2030_hormuz_flashpoint_active
+			add_dynamic_modifier = { modifier = tw2030_hormuz_maritime_risk }
+		}
 	}
 
 	# Korean Peninsula Rearmament Alert (2024+)
@@ -93,9 +136,13 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_korea_flashpoint_active }
 		}
 		set_global_flag = tw2030_korea_flashpoint_active
-		news_event = { id = tw2030_flashpoint.4 days = 1 }
-		NKO = { set_country_flag = tw2030_readiness_level_3 }
-		KOR = { set_country_flag = tw2030_readiness_level_3 }
+		if = {
+			limit = { date < 2025.1.1 }
+			news_event = { id = tw2030_flashpoint.4 days = 1 }
+		}
+		# Korean powers count as rearming powers regardless of size
+		NKO = { set_country_flag = tw2030_priority_rearming_power }
+		KOR = { set_country_flag = tw2030_priority_rearming_power }
 	}
 
 	# Strategic Resource Friction (2026+)
@@ -105,47 +152,183 @@ tw2030_escalation_monthly_pulse = {
 			NOT = { has_global_flag = tw2030_resource_friction_active }
 		}
 		set_global_flag = tw2030_resource_friction_active
-		news_event = { id = tw2030_flashpoint.5 days = 1 }
+		if = {
+			limit = { date < 2027.1.1 }
+			news_event = { id = tw2030_flashpoint.5 days = 1 }
+		}
+		every_country = {
+			set_country_flag = tw2030_resource_friction_active
+			add_dynamic_modifier = { modifier = tw2030_strategic_resource_scarcity }
+		}
 	}
 
-	# Update country readiness levels for rearming powers
-	every_country = {
+	# Wargoals for the revisionist powers (the AI war-prep strategies need them)
+	if = {
 		limit = {
-			tw2030_is_rearming_power = yes
-			is_ai = yes
+			has_global_flag = tw2030_era_3_active
+			NOT = { has_global_flag = tw2030_wargoals_issued }
 		}
-		if = {
-			limit = { has_global_flag = tw2030_era_2_active }
-			set_country_flag = tw2030_readiness_level_1
-			clr_country_flag = tw2030_readiness_level_2
-			clr_country_flag = tw2030_readiness_level_3
-			clr_country_flag = tw2030_readiness_level_4
+		set_global_flag = tw2030_wargoals_issued
+		CHI = { tw2030_wargoal_against_TAI = yes }
+		SOV = { tw2030_wargoal_against_UKR = yes }
+		NKO = { tw2030_wargoal_against_KOR = yes }
+		PER = { tw2030_wargoal_against_ISR = yes }
+	}
+
+	if = {
+		limit = { NOT = { has_global_flag = tw2030_readiness_fresh } }
+		set_global_flag = {
+			flag = tw2030_readiness_fresh
+			days = 90
 		}
-		else_if = {
-			limit = { has_global_flag = tw2030_era_3_active }
-			clr_country_flag = tw2030_readiness_level_1
-			set_country_flag = tw2030_readiness_level_2
-			if = {
-				limit = { is_major = yes }
-				clr_country_flag = tw2030_readiness_level_2
-				set_country_flag = tw2030_readiness_level_3
-			}
-			clr_country_flag = tw2030_readiness_level_4
-		}
-		else_if = {
-			limit = { has_global_flag = tw2030_era_4_active }
-			clr_country_flag = tw2030_readiness_level_1
-			clr_country_flag = tw2030_readiness_level_2
-			clr_country_flag = tw2030_readiness_level_3
-			set_country_flag = tw2030_readiness_level_4
-		}
-		# Emergency Readiness Boost for Major Powers during Early Aggression
-		if = {
+		# Update country readiness levels for rearming powers (exactly one level at a time; refreshed on era changes and every 90 days)
+		every_country = {
 			limit = {
-				has_global_flag = tw2030_early_player_aggression
-				is_major = yes
+				tw2030_is_rearming_power = yes
 			}
-			set_country_flag = tw2030_readiness_level_4
+			tw2030_clear_readiness = yes
+			if = {
+				limit = { has_global_flag = tw2030_era_4_active }
+				set_country_flag = tw2030_readiness_level_4
+			}
+			else_if = {
+				limit = { has_global_flag = tw2030_era_3_active }
+				if = {
+					limit = { is_major = yes }
+					set_country_flag = tw2030_readiness_level_3
+				}
+				else = {
+					set_country_flag = tw2030_readiness_level_2
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = tw2030_era_2_active }
+				set_country_flag = tw2030_readiness_level_1
+			}
+			# Emergency Readiness Boost for Major Powers during Early Aggression
+			if = {
+				limit = {
+					has_global_flag = tw2030_early_player_aggression
+					is_major = yes
+				}
+				tw2030_clear_readiness = yes
+				set_country_flag = tw2030_readiness_level_4
+			}
+			tw2030_apply_readiness = yes
+		}
+
+		# Countries that stopped qualifying (subjugated, player, ...) lose their readiness
+		every_country = {
+			limit = {
+				tw2030_is_rearming_power = no
+				OR = {
+					has_country_flag = tw2030_readiness_level_1
+					has_country_flag = tw2030_readiness_level_2
+					has_country_flag = tw2030_readiness_level_3
+					has_country_flag = tw2030_readiness_level_4
+				}
+			}
+			tw2030_clear_readiness = yes
+			tw2030_apply_readiness = yes
+		}
+	}
+}
+
+tw2030_clear_readiness = {
+	clr_country_flag = tw2030_readiness_level_1
+	clr_country_flag = tw2030_readiness_level_2
+	clr_country_flag = tw2030_readiness_level_3
+	clr_country_flag = tw2030_readiness_level_4
+}
+
+# Mirrors the readiness flags into dynamic modifiers (the modifiers' enable block alone applies nothing)
+tw2030_apply_readiness = {
+	remove_dynamic_modifier = { modifier = tw2030_state_of_readiness_1 }
+	remove_dynamic_modifier = { modifier = tw2030_state_of_readiness_2 }
+	remove_dynamic_modifier = { modifier = tw2030_state_of_readiness_3 }
+	remove_dynamic_modifier = { modifier = tw2030_state_of_readiness_4 }
+	if = {
+		limit = { has_country_flag = tw2030_readiness_level_1 }
+		add_dynamic_modifier = { modifier = tw2030_state_of_readiness_1 }
+	}
+	if = {
+		limit = { has_country_flag = tw2030_readiness_level_2 }
+		add_dynamic_modifier = { modifier = tw2030_state_of_readiness_2 }
+	}
+	if = {
+		limit = { has_country_flag = tw2030_readiness_level_3 }
+		add_dynamic_modifier = { modifier = tw2030_state_of_readiness_3 }
+	}
+	if = {
+		limit = { has_country_flag = tw2030_readiness_level_4 }
+		add_dynamic_modifier = { modifier = tw2030_state_of_readiness_4 }
+	}
+}
+
+# Only AI countries, and only when the target exists and is not an ally or already an enemy
+tw2030_wargoal_against_TAI = {
+	if = {
+		limit = {
+			is_ai = yes
+			country_exists = TAI
+			NOT = { has_war_with = TAI }
+			NOT = { is_in_faction_with = TAI }
+			NOT = { has_wargoal_against = TAI }
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = TAI
+		}
+	}
+}
+
+# Only AI countries, and only when the target exists and is not an ally or already an enemy
+tw2030_wargoal_against_UKR = {
+	if = {
+		limit = {
+			is_ai = yes
+			country_exists = UKR
+			NOT = { has_war_with = UKR }
+			NOT = { is_in_faction_with = UKR }
+			NOT = { has_wargoal_against = UKR }
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = UKR
+		}
+	}
+}
+
+# Only AI countries, and only when the target exists and is not an ally or already an enemy
+tw2030_wargoal_against_KOR = {
+	if = {
+		limit = {
+			is_ai = yes
+			country_exists = KOR
+			NOT = { has_war_with = KOR }
+			NOT = { is_in_faction_with = KOR }
+			NOT = { has_wargoal_against = KOR }
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = KOR
+		}
+	}
+}
+
+# Only AI countries, and only when the target exists and is not an ally or already an enemy
+tw2030_wargoal_against_ISR = {
+	if = {
+		limit = {
+			is_ai = yes
+			country_exists = ISR
+			NOT = { has_war_with = ISR }
+			NOT = { is_in_faction_with = ISR }
+			NOT = { has_wargoal_against = ISR }
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = ISR
 		}
 	}
 }
